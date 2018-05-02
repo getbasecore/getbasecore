@@ -1,0 +1,2 @@
+# getbasecore
+Basecore Site Domain
