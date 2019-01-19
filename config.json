@@ -24,9 +24,9 @@
 	"blocks" : "src/components/molecules",
 	"ext" : "html",
 	"app" : "http://localhost/getbasecore/",
-	"gmailtest" : "greenpointddigital@gmail.com",
-	"yahootest" : "greenpointddigital@yahoo.com",
-	"outlooktest" : "greenpointddigital@outlook.es",
-	"outlookPCtest" : "rsedano@deloitte.es",
-	"icloudtest" : "rodrigosedano@me.com"
+	"gmailtest" : "mail@gmail.com",
+	"yahootest" : "mail@yahoo.com",
+	"outlooktest" : "mail@outlook.es",
+	"outlookPCtest" : "mail@outlook.es",
+	"icloudtest" : "mail@icliud.com"
 }
