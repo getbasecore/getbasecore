@@ -1,0 +1,20 @@
+@mixin generate_titles($title-name, $font-size, $font-family, $font-weight,  $color, $mb, $border:0){
+  
+  [class$="#{$title-name}"] {
+    display: block;
+    font-size: $font-size;
+    line-height: $font-size;
+    font-family: $font-family;
+	font-weight: $font-weight;
+    color: $color;
+    padding-bottom: $mb;
+    border-bottom: $border;
+  }
+  
+}
+
+@mixin empty(){
+	font-size: 1px;
+	line-height: 1px;
+	height: 1px;
+}

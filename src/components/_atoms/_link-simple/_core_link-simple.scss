@@ -1,0 +1,65 @@
+//Button reset to look like buttons
+button[class*="link-"]{
+  background: none;
+  border-left: none;
+  border-right: none;
+  font-size: inherit;
+  margin: 0;
+}
+
+//Reset links
+a{
+	text-decoration: none;
+	color: inherit
+}
+
+.link-simple{
+	&:after{
+		content: '';	
+		display: block;			
+		opacity: 0;
+	}
+	
+  &:active,
+  &.active,
+  &:hover{
+    &:after{
+		content: '';
+		display: block;
+	    opacity: 1;
+	    
+    }
+  }
+	
+	
+}
+
+@mixin generate-link-simple($name, $color, $color-hover, $color-disabled){
+    
+  .link-simple--#{$name}, .link-simple--#{$name}:link, .link-simple--#{$name}:visited, .link-simple--#{$name}{
+    
+    color: $color;  
+  
+  	&:visited{
+  		color: $color;  	
+  	}
+  
+    &:focus{
+
+    }
+    
+    &[disabled],
+    &is-disabled{
+      color: $color-disabled;
+      pointer-events: none;
+    }
+    
+    &:active,
+    &.active,
+    &:hover{
+      color: $color-hover;
+  
+    }
+  }
+  
+}

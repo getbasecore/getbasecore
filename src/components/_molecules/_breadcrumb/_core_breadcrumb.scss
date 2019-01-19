@@ -1,0 +1,24 @@
+.breadcrumb{
+  ol{
+    display: flex;
+  }
+  li{
+
+    &:after{
+
+    }
+    
+    a{
+      
+    }
+    
+  }
+  &__active{
+    
+
+  }
+  &__aa{
+    @include show-sr();
+  }
+  
+}

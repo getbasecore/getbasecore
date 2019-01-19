@@ -1,0 +1,814 @@
+<html>
+
+  <head>
+  
+    <title>QA Tester</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style type="text/css" media="screen">
+      
+      device *{
+/*         transition: .5s */
+      }
+      
+      *{
+        box-sizing: border-box;
+      }
+      
+      body{
+        background-color: white;
+        padding: 0px;
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        -webkit-font-smoothing: antialiased
+      }
+      
+      .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end
+      }
+      
+      .hidden{
+        display: none !important;
+      }
+      
+      .header{
+        position: -webkit-sticky;
+        position: sticky;
+        top:0px;
+        z-index: 9;
+        background: #EE0256;
+        padding: 10px;
+        align-items: center;
+        color: white;
+        flex-basis: 100%;
+      }
+    
+      .header__nav{
+        display: flex;    
+        justify-content: flex-start;
+        align-items: flex-end;
+      }
+      .header__item{
+        list-style: none;
+        margin-right: 20px;
+      }
+      
+      .header__item:first-child{
+        flex-basis: 500px;
+        display: flex;
+        align-items: baseline;
+      }
+      
+      .header__url{
+        flex: 1;
+        display: flex;
+        align-items: baseline
+      }
+      
+      .header__local{
+        flex: 1;
+        display: flex;
+        align-items: baseline
+      }
+      
+      .header__item:last-child{
+        margin-right: 0;
+      }
+      
+      .header__input{
+        background: transparent;
+        border: 0;
+        font-size: 18px;
+        color: inherit;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid;
+        border-radius: 0;
+        box-shadow: none;
+        transition-duration: 0s;
+        opacity: 0.5;
+        transition: ease 125ms;
+        flex-basis: 100%;
+        margin-left: 10px;
+        height: 38px;
+        
+      }
+      
+      .header__select{
+        -webkit-appearance: none;
+        background: transparent;
+        border: 0;
+        font-size: 18px;
+        color: inherit;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid;
+        border-radius: 0;
+        box-shadow: none;
+        transition-duration: 0s;
+        opacity: 0.5;
+        transition: ease 125ms;
+        flex-basis: 100%;
+        margin-left: 10px;
+        height: 38px;
+        
+      }
+
+      .header__input::placeholder {
+        color:    black;
+      }
+      
+      
+      
+      .header__btn{
+        -webkit-appearance: none;
+        background: white;
+        border:0px;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        box-shadow: 0px 3px 0px rgba(0,0,0,.2);
+        font-weight: bold;
+        cursor: pointer;   
+        position: relative;   
+        overflow: hidden; 
+        transition: .2s; 
+      }
+      
+      
+     .header__btn:hover     
+     {
+        background: #b60443;
+        color: white;
+      }
+      
+      .header__btn.active{
+        background: black;
+        color: white;
+        box-shadow: none;
+        top:2px
+      }
+      
+      .header__btn:after:hover{
+        top:0
+      }
+      
+      .device{
+        border: 20px solid black;
+        border-radius: 45px;
+        margin-right: 10px;
+        border-top: 100px solid black;
+        border-bottom: 100px solid black;
+        position: relative;		
+        margin-bottom: 20px;		
+        border-color: #282828;	
+        background-color: #282828;		
+        transform: scale(0.85);
+               
+      }
+            
+      .device.iphone.rotate,
+      .device.ipad.rotate
+      {
+        border: 20px solid black;        
+        border-left: 100px solid black;
+        border-right: 100px solid black;
+      }
+      
+      .device .screen{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+/*         transition: .5s; */
+      }
+      
+      /* Navigation */
+      
+      .device .nav{
+        background: #a7a5a5;
+        transition: .5s;
+      }      
+      
+      .device .top-nav{
+        flex: 1 1  70px;
+      }
+      
+      .device iframe{
+        flex: 1 1  100%;
+      }
+
+      .device .bottom-nav{
+        flex: 1 1  44px;
+      }
+      
+      
+      .device.iphone:hover .top-nav,
+      .device.iphone.minimal .top-nav
+      {
+        flex-basis: 40px;
+      }
+      
+      .device.iphone:hover .bottom-nav,
+      .device.iphone.minimal .bottom-nav{  
+        flex-basis: 0px;
+      }       
+      
+      
+      /* Home Button */
+      
+      .device:after{
+        content: attr(data-title);
+        display: block;
+        position: absolute;
+        top:  -30px;
+        text-align: center;
+        color: white;
+      }
+      
+      .device.iphone.rotate:after,
+      .device.ipad.rotate:after{
+        top:-50px;
+      }
+      
+      .device:before{
+        content: '';
+        display: block;
+        border: 2px solid #a7a5a5;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        position: absolute;
+        bottom:  -80px;
+        left: 0; right: 0;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+        
+      }
+      .device.iphone.rotate:before,
+      .device.ipad.rotate:before
+      {
+        bottom: 0;
+        top:0;
+        right: -80px;
+        margin: auto;
+        left: auto;
+      }
+      
+      /*
+      ** Custom Devices
+      */  
+      
+      /* iPhoneSE */
+      .device.iphoneSE .screen{
+        width: 320px;
+        height: 568px;        
+      }
+            
+      .device.iphoneSE.rotate .screen{
+        height: 320px;
+        width: 568px;        
+      }
+      
+      
+      
+      /* iPhone6 */
+      .device.iphone6 .screen{
+        width: 375px;        
+        height: 667px;        
+      }
+            
+      .device.iphone6.rotate .screen{
+        height: 375px;        
+        width:  667px;        
+      }
+      /* iPhone6+ */
+      .device.iphone6plus .screen{
+        width: 414px;
+        height: 736px;        
+      }
+            
+      .device.iphone6plus.rotate .screen{
+        height: 414px;
+        width: 736px;        
+      }
+      /* iPhoneX */
+      
+      .device.iphoneX:after{
+        color: black;
+      }
+      
+      .device.iphoneX .screen{
+        width: 375px;        
+        height: 812px;    
+        overflow: hidden;    
+      }
+
+      .device.iphoneX.minimal .screen{
+        border-radius: 35px;
+        overflow: hidden;    
+      }
+            
+      .device.iphoneX.rotate .screen{
+        height: 375px;        
+        width:  812px;    
+      }
+      .device.iphoneX{
+        border: 10px solid black;
+        border-radius: 45px;
+        margin-right: 10px;
+        border-top: 10px solid black;
+        border-bottom: 10px solid black;
+        position: relative;		
+        margin-bottom: 20px;		
+        border-color: #282828;	
+        background-color: #282828;		
+        transform: scale(0.85);                
+      }
+      
+      .device.iphoneX.rotate{
+        border: 10px solid black;
+      }
+      
+      .device.iphoneX.rotate .screen{
+        border-radius: 35px;
+        overflow: hidden;
+      }
+      
+      
+      /* Notch */
+      .device.iphoneX:before{
+        content: '';
+        display: block;
+        border: 0;
+        width: 60%;
+        height: 30px;
+        border-radius: 0 0 20px 20px;
+        position: absolute;
+        top:  -1px;
+        bottom: auto;
+        background: #282828;
+        left: 0; right: 0;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+        
+      }   
+      
+      .device.iphoneX.rotate:before{
+        width: 30px;
+        margin: auto;
+        left: 0;
+        right: auto;
+        top: 0; bottom: 0;
+        height: 60%;
+        border-radius: 0 20px 20px 0;
+      }
+      
+      /* Navigation */
+         
+      .device.iphoneX .top-nav{
+        border-radius: 35px 35px 0 0;
+        flex-basis: 95px;
+      }
+      
+      .device.iphoneX.rotate .top-nav{
+        flex-basis: 50px;
+      }
+      
+      .device.iphoneX.rotate:hover .top-nav,
+      .device.iphoneX.rotate.minimal .top-nav{
+        flex-basis: 0;
+      }
+      
+      
+      .device.iphoneX .bottom-nav{
+        border-radius:  0 0 35px 35px;
+        flex-basis: 84px;
+      }
+      
+      .device.iphoneX.rotate .bottom-nav{
+        flex-basis: 0
+      }
+      
+      .device.iphoneX:hover .top-nav,
+      .device.iphoneX.minimal .top-nav{
+        flex-basis: 64px;
+      }       
+      
+      .device.iphoneX:hover .screen,
+      .device.iphoneX:hover iframe,
+      .device.iphoneX.minimal .screen,
+      .device.iphoneX.minimal iframe
+      {
+        border-radius:  0 0 35px 35px;
+        overflow: hidden;
+        
+      }  
+      
+      .device.iphoneX.rotate:hover .screen,
+      .device.iphoneX.rotate:hover iframe,
+      .device.iphoneX.rotate.minimal .screen,
+      .device.iphoneX.rotate.minimal iframe
+      {
+        border-radius:  35px;
+        overflow: hidden;
+      }       
+      
+           
+      
+            
+      /* iPad */
+      .device.ipad .screen{
+        width: 768px;
+        height: 1024px;        
+      }
+      .device.ipad.rotate .screen{
+        height: 768px;
+        width:  1024px;        
+      }
+      
+      .device.ipad.minimal .top-nav{
+        flex-basis: 40px;
+      }
+      
+      
+      
+      /* Mac */
+            
+      .device.mac .top-nav{
+        height: 22px;
+      }
+      
+      .device.mac .screen{
+        width: 1280px;
+        height: 800px;        
+      }
+      
+      
+      .device.mac .bottom-nav{
+        height: 54px;
+      }
+      
+      /* Windows */
+      
+      .device.laptop{
+        border-bottom-width: 40px;
+        border-radius: 45px 45px 0 0
+      }
+      
+      .device.laptop:before{
+        width: 1340px;
+        border-radius: 0 0 20px 20px;
+        height: 30px;
+        background: #565656;
+        border: 0;
+        bottom:  -50px;
+        left: -30px;
+        
+      }
+      
+      /* Ocultamos las barras de navegación */
+      
+      
+      
+    </style>
+      </head>
+  
+  <body>
+    <div class="wrapper">
+   
+    <header class="header">
+      
+      <form id="form">
+        <ul class="header__nav">
+          
+          <li class="header__item">
+          
+            <div class="header__url">
+              <label class="header__label" for="url">Url: </label>
+              <input id="url" class="header__input" id="url" type="text" name="url" placeholder="http://localhost...">
+            </div>
+
+            <div class="header__local hidden">
+              <label class="header__label" for="local">local: </label>
+              <select class="header__select" name="local" id="local">
+                <option value="http://youmightnotneedjquery.com">https://stackoverflow.com/questions/8664486/javascript-code-to-stop-form-submission</option>
+              </select>                           
+            </div>
+            
+          </li>
+
+<!--
+          <li class="header__item">
+            <button class="header__btn" type="button" id="origin">Origin</button>
+          </li>
+-->
+          
+          <li class="header__item">
+            <button class="header__btn" type="button" id="rotate">Rotate</button>
+          </li>
+          
+          <li class="header__item">
+            <button class="header__btn" type="button" id="minimal">Minimal UI</button>
+          </li>
+          
+        </ul>
+        
+
+
+        
+      </form>
+      
+    </header>
+    
+    
+    <div class="android">
+	    Safari only for now!	    
+    </div>
+    
+    <div data-title="iPhone SE 320x568" data-can-rotate class="device iphoneSE iphone safari">
+      <div class="screen">
+        <div class="nav top-nav"></div>
+        <iframe  src="" frameborder="0"></iframe>
+        <div class="nav bottom-nav"></div>
+      </div>
+    </div>
+    
+    <div data-title="iPhone 6 375x667"  data-can-rotate class="device iphone iphone6 safari">
+      <div class="screen">
+        <div class="nav top-nav"></div>
+        <iframe src="" frameborder="0" ></iframe>
+        <div class="nav bottom-nav"></div>
+      </div>
+    </div>
+    
+    <div data-title="iPhone 6 + 414x736" data-can-rotate class="device iphone iphone6plus safari">
+      <div class="screen">
+        <div class="nav top-nav"></div>
+        <iframe src="" frameborder="0" ></iframe>
+        <div class="nav bottom-nav"></div>
+      </div>
+    </div>
+    
+    <div data-title="iPhone X 375x812" data-can-rotate class="device iphone iphoneX safari">
+      <div class="screen">
+        <div class="nav top-nav"></div>
+        <iframe src="" frameborder="0" ></iframe>
+        <div class="nav bottom-nav"></div>
+      </div>
+    </div>
+    
+<!--
+    <div data-title="Android 360x640" data-can-rotate  class="device android chrome">
+      <div class="screen">
+        <div class="nav top-nav"></div>
+        <iframe src="" frameborder="0" ></iframe>
+        <div class="nav bottom-nav"></div>
+      </div>
+    </div>
+-->
+    
+    <div data-title="iPad 768x1024" data-can-rotate class="device ipad safari">
+      <div class="screen">
+        <div class="nav top-nav"></div>
+        <iframe src="" frameborder="0" ></iframe>
+      </div>        
+    </div>
+        
+    <div data-title="Macbook 1280x800" class="device laptop mac safari">
+      <div class="screen">
+        <div class="nav top-nav"></div>
+        <iframe src="" frameborder="0"></iframe>
+        <div class="nav bottom-nav"></div>
+      </div>
+    </div>
+  
+<!--
+    <div data-title="Windows PC 1366x768" class="device laptop win chrome">
+      <div class="screen">
+        <div class="nav top-nav"></div>
+        <iframe src="" frameborder="0"></iframe>
+        <div class="nav bottom-nav"></div>
+      </div>
+    </div>
+-->
+  </div>  
+
+    <script language="javascript" type="text/javascript">
+
+//       document.getElementById('origin').addEventListener('click', changeOrigin);              
+
+
+      document.getElementById('rotate').addEventListener('click', rotateDevices);              
+
+      document.getElementById('minimal').addEventListener('click', minimalDevices);              
+
+      document.getElementById('form').addEventListener('submit', changeURL);              
+
+      document.getElementById('form').addEventListener('submit', function(e) {e.preventDefault()});              
+      
+      
+      
+      html = "";
+      obj = {
+          "1" : "Name",
+          "2": "Age",
+          "3" : "Gender"
+      }
+      for(var key in obj) {
+          html += "<option value=" + key  + ">" +obj[key] + "</option>"
+      }
+      document.getElementById("local").innerHTML = html;
+      
+      
+      function changeOrigin(){
+        
+        origin = document.getElementById('url').value;  
+        
+      }
+      
+      function changeURL(){
+          url = document.getElementById('url').value;  
+          
+          if ( url === '' ){
+            url == 'http://localhost'
+          }
+          
+          iframes = document.querySelectorAll('iframe');
+          var len = iframes.length;
+          while (len--) { // We go trough the Array
+            el = iframes[len]
+            el.setAttribute('src', url)
+          }
+      }
+      
+      function rotateDevices(){
+        
+        devicesToRotate = document.querySelectorAll('[data-can-rotate]');
+        var len = devicesToRotate.length;
+        while (len--) { // We go trough the Array
+          
+          el= devicesToRotate[len];
+          className = 'rotate' ;
+          if (el.classList) {
+            el.classList.toggle(className);
+          } else {
+            var classes = el.className.split(' ');
+            var existingIndex = classes.indexOf(className);
+          
+            if (existingIndex >= 0)
+              classes.splice(existingIndex, 1);
+            else
+              classes.push(className);
+          
+            el.className = classes.join(' ');
+          }        
+          
+        }
+      
+        el= this;
+        className = 'active' ;
+        if (el.classList) {
+          el.classList.toggle(className);
+        } else {
+          var classes = el.className.split(' ');
+          var existingIndex = classes.indexOf(className);
+        
+          if (existingIndex >= 0)
+            classes.splice(existingIndex, 1);
+          else
+            classes.push(className);
+        
+          el.className = classes.join(' ');
+        }        
+        
+        
+        
+      }
+      
+      function minimalDevices(){
+        
+        devicesToMinimal = document.querySelectorAll('.device');
+        var len = devicesToMinimal.length;
+        while (len--) { // We go trough the Array
+          
+          el= devicesToMinimal[len];
+          className = 'minimal' ;
+          if (el.classList) {
+            el.classList.toggle(className);
+          } else {
+            var classes = el.className.split(' ');
+            var existingIndex = classes.indexOf(className);
+          
+            if (existingIndex >= 0)
+              classes.splice(existingIndex, 1);
+            else
+              classes.push(className);
+          
+            el.className = classes.join(' ');
+          }        
+        
+        }
+        
+        el= this;
+        className = 'active' ;
+        if (el.classList) {
+          el.classList.toggle(className);
+        } else {
+          var classes = el.className.split(' ');
+          var existingIndex = classes.indexOf(className);
+        
+          if (existingIndex >= 0)
+            classes.splice(existingIndex, 1);
+          else
+            classes.push(className);
+        
+          el.className = classes.join(' ');
+        }                
+        
+        
+      }      
+      
+      function hideSafari(){
+        var browser = document.querySelectorAll('.safari');
+        var len = browser.length;
+        while (len--) { // We go trough the Array
+        browser[len].style.display = 'none';
+        }       
+      }
+      
+      function hideChrome(){
+        var browser = document.querySelectorAll('.chrome');
+        var len = browser.length;
+        while (len--) { // We go trough the Array
+        browser[len].style.display = 'none';
+        }         
+      
+      }
+      
+      function detectChrome(){
+        
+        var isChromium = window.chrome,
+        winNav = window.navigator,
+        vendorName = winNav.vendor,
+        isOpera = winNav.userAgent.indexOf("OPR") > -1,
+        isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+        isIOSChrome = winNav.userAgent.match("CriOS");
+        
+        if(isIOSChrome){
+        // is Google Chrome on IOS
+        } else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+          // is Google Chrome
+          hideSafari();
+        } else { 
+          // not Google Chrome 
+          hideChrome()
+        }      
+        
+      }
+      
+      
+      function findGetParameter(parameterName) {
+          var result = null,
+              tmp = [];
+          location.search
+              .substr(1)
+              .split("&")
+              .forEach(function (item) {
+                tmp = item.split("=");
+                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+              });
+          if ( result ){
+            url = result;
+            iframes = document.querySelectorAll('iframe');
+            var len = iframes.length;
+            while (len--) { // We go trough the Array
+              el = iframes[len]
+              el.setAttribute('src', url)
+            }
+            document.getElementById('url').setAttribute('value', url)  
+          }else{
+            console.log('no url')
+          }
+      }      
+      
+      
+      //Esperamos a que el DOM este cargado para poder ejecutar el JS con el DOM completo...
+      document.addEventListener("DOMContentLoaded", function(event) { 
+      
+        detectChrome();
+        findGetParameter('url');
+      
+      });  	
+      
+    
+    </script>
+  
+
+  </body>	
+
+</html>

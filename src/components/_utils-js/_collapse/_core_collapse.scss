@@ -1,0 +1,9 @@
+.collapse,
+.accordion__collapse{
+  overflow: hidden;
+  max-height: 0;
+    &.is-visible{
+    display: block;  
+    max-height: 2000px;
+  }
+}

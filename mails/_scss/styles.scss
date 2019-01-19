@@ -1,0 +1,42 @@
+/* Basics */
+body {
+  Margin: 0;
+  padding: 0;
+  min-width: 100%;
+  background-color: #ffffff;
+  font-size: 14px;
+}
+table {
+  border-spacing: 0;
+  font-family: sans-serif;
+  color: #333333;
+}
+td {
+  padding: 0;
+}
+img {
+  border: 0;
+}
+.wrapper {
+  width: 100%;
+  table-layout: fixed;
+  page-break-inside:avoid;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+.rtl td:not(center){
+	direction: rtl;
+	text-align: right;
+}
+
+
+//  ----------------------------------------------------------------------------------------------------
+//
+//   Components
+//
+// -----------------------------------------------------------------------------------------------------
+@import "../_components/_common/_utils-sass/_vars/_core_vars.scss";
+@import "../_components/_common/_utils-sass/_vars/_custom_vars.scss";
+@import "../_components/_common/_utils-sass/_mixins/_core_mixins.scss";
+@import "../_components/_common/_utils-sass/_mixins/_custom_mixins.scss";
+@import "../_components/**/*";

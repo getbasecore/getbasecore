@@ -1,0 +1,11 @@
+.header{
+  
+	@media (max-width: $screen-xs-max) {
+		position: sticky;
+		top:0;			
+		width: 100%;
+		z-index: $zindex3;
+	}  			
+  
+  
+}

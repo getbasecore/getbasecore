@@ -1,0 +1,16 @@
+$.fn.collapse = function(action) {  
+  
+  var target = this[0]; // From prototype to single object
+//  var trigger = this[0].querySelector('[data-toggle]');
+
+  if (action === 'hide'){
+    collapse.hide(target);
+  }else   
+  if (action === 'show'){
+     collapse.show(target);
+  }else{
+     collapse.toggle(target);
+  }
+    
+  return this;
+};

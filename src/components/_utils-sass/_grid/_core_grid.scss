@@ -1,0 +1,372 @@
+@mixin create-grid($size) {
+  $creen-size: 1px;
+  @if $size == "xs" { $creen-size : 1px ;  }
+  @if $size == "sm" { $creen-size : $screen-sm ;  }
+  @if $size == "md" { $creen-size : $screen-md ;  }
+  @if $size == "lg" { $creen-size : $screen-lg ;  }
+  @if $size == "xl" { $creen-size : $screen-xl ;  }
+  
+  
+  @media (min-width: $creen-size) {
+    
+    .col-#{$size}-1 {
+      flex: 0 0 8.33333333%;
+	  max-width: 8.33333333%;
+    }
+    
+    .col-#{$size}-2 {
+      flex: 0 0 16.66666667%;
+	  max-width: 16.66666667%;
+    }
+    
+    .col-#{$size}-3 {
+      flex: 0 0 25%;
+	  max-width: 25%;
+    }
+    
+    .col-#{$size}-4 {
+      flex: 0 0 33.33333333%;
+	  max-width: 33.33333333%;
+    }
+    
+    .col-#{$size}-5 {
+      flex: 0 0 41.66666667%;
+	  max-width: 41.66666667%;
+    }
+    
+    .col-#{$size}-6 {
+      flex: 0 0 50%;
+	  max-width: 50%;
+    }
+    
+    .col-#{$size}-7 {
+      flex: 0 0 58.33333333%;
+	  max-width: 58.33333333%;
+    }
+    
+    .col-#{$size}-8 {
+      flex: 0 0 66.66666667%;
+	  max-width: 66.66666667%;
+    }
+    
+    .col-#{$size}-9 {
+      flex: 0 0 75%;
+	  max-width: 75%;
+    }
+    
+    .col-#{$size}-10 {
+      flex: 0 0 83.33333333%;
+	  max-width: 83.33333333%;
+    }
+    
+    .col-#{$size}-11 {
+      flex: 0 0 91.66666667%;
+	  max-width: 91.66666667%;
+    }
+    
+    .col-#{$size}-12 {
+      flex: 0 0 100%;
+	  max-width: 100%;
+    }    
+    
+  }
+
+}
+
+@mixin create-col-offset($size) {
+  $creen-size: 1px;
+  @if $size == "xs" { $creen-size : 1px ;  }
+  @if $size == "sm" { $creen-size : $screen-sm ;  }
+  @if $size == "md" { $creen-size : $screen-md ;  }
+  @if $size == "lg" { $creen-size : $screen-lg ;  }
+  @if $size == "xl" { $creen-size : $screen-xl ;  }
+  
+  
+  @media (min-width: $creen-size) {
+    
+    .col--offset-#{$size}-1 {
+      margin-left: 8.33333333%;
+    }
+    
+    .col--offset-#{$size}-2 {
+      margin-left: 16.66666667%;
+    }
+    
+    .col--offset-#{$size}-3 {
+      margin-left: 25%;
+    }
+    
+    .col--offset-#{$size}-4 {
+      margin-left: 33.33333333%;
+    }
+    
+    .col--offset-#{$size}-5 {
+      margin-left: 41.66666667%;
+    }
+    
+    .col--offset-#{$size}-6 {
+      margin-left: 50%;
+    }
+    
+    .col--offset-#{$size}-7 {
+      margin-left: 58.33333333%;
+    }
+    
+    .col--offset-#{$size}-8 {
+      margin-left: 66.66666667%;
+    }
+    
+    .col--offset-#{$size}-9 {
+      margin-left: 75%;
+    }
+    
+    .col--offset-#{$size}-10 {
+      margin-left: 83.33333333%;
+    }
+    
+    .col--offset-#{$size}-11 {
+      margin-left: 91.66666667%;
+    }
+    
+    .col--offset-#{$size}-12 {
+      margin-left: 100%;
+    }    
+    
+  }
+
+}
+
+
+@mixin create-col-order($size) {
+  $creen-size: 1px;
+  @if $size == "xs" { $creen-size : 1px ;  }
+  @if $size == "sm" { $creen-size : $screen-sm ;  }
+  @if $size == "md" { $creen-size : $screen-md ;  }
+  @if $size == "lg" { $creen-size : $screen-lg ;  }
+  @if $size == "xl" { $creen-size : $screen-xl ;  }
+  
+  
+  @media (min-width: $creen-size) {
+    
+    .col--order-#{$size}-1 {
+      order: 1;
+    }
+    
+    .col--order-#{$size}-2 {
+      order: 2;
+    }
+    
+    .col--order-#{$size}-3 {
+      order: 3;
+    }
+    
+    .col--order-#{$size}-4 {
+      order: 4;
+    }
+    
+    .col--order-#{$size}-5 {
+      order: 5;
+    }
+    
+    .col--order-#{$size}-6 {
+      order: 6;
+    }
+    
+    .col--order-#{$size}-7 {
+      order: 7;
+    }
+    
+    .col--order-#{$size}-8 {
+      order: 8;
+    }
+    
+    .col--order-#{$size}-9 {
+      order: 9;
+    }
+    
+    .col--order-#{$size}-10 {
+      order: 10;
+    }
+    
+    .col--order-#{$size}-11 {
+      order: 11;
+    }
+    
+    .col--order-#{$size}-12 {
+      order: 12;
+    }    
+    
+  }
+
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+
+.container{  
+  padding-right: $grid-gutter/2;
+  padding-left: $grid-gutter/2;
+  margin-right: auto;
+  margin-left: auto;  
+  min-width: 320px;
+  @include clearfix();
+
+  @media (min-width: $screen-sm) {
+    width: $container-sm;
+
+  }
+  
+  @media (min-width: $screen-md) {
+    width: $container-md;
+
+  }
+  
+  @media (min-width: $screen-lg) {
+    width: $container-lg;
+  }
+  
+  @media (min-width: $screen-xl) {
+    width: $container-xl;
+  }
+  
+  &--fluid{
+    width: 100%;
+  }
+  
+}
+
+.row{
+  margin-left: $grid-gutter/2*-1;
+  margin-right: $grid-gutter/2*-1;
+  display: flex;
+  flex-wrap: wrap;
+  
+  //   Rows sin padding interior
+  &--no-padding{
+    margin-left: 0;
+    margin-right: 0;
+  
+    > [class*="col-"] {
+      padding-left: 0 ;
+      padding-right: 0 ;
+    }
+    
+  }
+  
+  //Flex utils
+  &--justify-start{
+	justify-content: flex-start;	  
+  }
+
+  &--justify-center{
+	justify-content: center;	  
+  }
+  
+  &--justify-between{
+	justify-content: space-between;	  
+  }
+  
+  &--justify-end{
+	justify-content: flex-end;	  
+  }
+    
+  &--align-start{
+	  align-items: flex-start;
+  }
+  
+  &--align-center{
+	  align-items: center;
+  }
+  
+  &--align-end{
+	  align-items: flex-end;
+  }
+  
+  &--same-height{
+	  > [class*="col-"],
+	  > .col {
+		  //height: 100%;
+		  align-self: stretch;
+		  display: flex;
+		  > *{
+			  align-self: stretch;
+			//  height: 100%;
+			  width: 100%;
+		  }
+		  
+	  }
+  }
+  
+  
+}
+[class*="col-"] {
+  flex: 1;
+  padding-left: $grid-gutter/2;
+  padding-right: $grid-gutter/2;
+  flex-basis: 100%;
+}
+
+.col{
+  flex: 1;
+  padding-left: $grid-gutter/2;
+  padding-right: $grid-gutter/2;	
+}
+
+
+
+
+// -------------------------------------------------- 
+//  Reverse column
+// --------------------------------------------------
+.col-xs{
+  @media (min-width: $screen-xs) {
+	  flex: 1 1 auto;
+	  padding-left: $grid-gutter/2;
+	  padding-right: $grid-gutter/2;
+  }
+}
+.col-sm{
+  @media (min-width: $screen-sm) {
+	  flex: 1 1 auto;
+	  padding-left: $grid-gutter/2;
+	  padding-right: $grid-gutter/2;
+  }
+}
+
+.col-md{
+  @media (min-width: $screen-md) {
+	  flex: 1 1 auto;
+	  padding-left: $grid-gutter/2;
+	  padding-right: $grid-gutter/2;
+  }
+}
+
+.col-lg{
+  @media (min-width: $screen-lg) {
+	  flex: 1 1 auto;
+	  padding-left: $grid-gutter/2;
+	  padding-right: $grid-gutter/2;
+  }
+}
+
+
+@include create-grid(xs);
+@include create-grid(sm);
+@include create-grid(md);
+@include create-grid(lg);
+@include create-grid(xl);
+
+@include create-col-offset(xs);
+@include create-col-offset(sm);
+@include create-col-offset(md);
+@include create-col-offset(lg);
+@include create-col-offset(xl);
+
+@include create-col-order(xs);
+@include create-col-order(sm);
+@include create-col-order(md);
+@include create-col-order(lg);
+@include create-col-order(xl);

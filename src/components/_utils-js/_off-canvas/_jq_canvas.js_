@@ -1,0 +1,15 @@
+$.fn.offcanvas = function(action) {
+  
+  var target = $('#'+this.attr('id')+'');                
+        
+  if (action === 'hide'){
+    offcanvas.hide();
+  }else if (action === 'show'){
+    offcanvas.show(target[0]);
+  }else{
+  	offcanvas.toggle(target[0]);
+  }
+
+  return this;
+    
+};

@@ -1,0 +1,43 @@
+.dropdown,
+.dropup{
+  position: relative;
+  &__menu{
+    width: auto;
+  //  display: none;
+    position: absolute;
+    left: 0;
+  }  
+  
+}
+
+
+.dropdown,
+.dropup,
+{
+  
+  &--open &__menu{
+  //  display: block;
+    
+    z-index: $zindex1;
+  }  
+  
+}
+
+//  --------------------------------------------------
+//  Dropups
+//  --------------------------------------------------
+
+.dropup.open{
+  
+  .dropdown__menu{
+    bottom: 100%;
+  }  
+  
+}
+
+
+.dropup{
+  .caret{
+    transform: rotate(180deg);    
+  }
+}

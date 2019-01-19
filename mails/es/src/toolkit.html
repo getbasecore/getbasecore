@@ -1,0 +1,236 @@
+@@include("../../_components/_common/_layout/_html-start.html",{
+  "pretext": "Preview text under the subject line",
+  "rtl": "rtl"
+})
+
+  <style type="text/css">
+
+	body{
+		background: #fafaf1 !important
+	}
+	
+	.heading,
+	.heading-2{
+		display: block;
+		margin-bottom: 30px;
+		margin-top: 50px;
+		border-bottom: 1px solid #aeaeae;
+		color: #444 !important;
+		font-size: 30px;
+		font-weight: bold;
+		font-family: Arial;
+		
+	}
+	.heading-2{
+		font-size: 20px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+	
+  </style>
+
+
+
+
+	@@include("../../_components/_common/_layout/_container-start.html")
+	<tr>
+		<td class="heading">
+			
+			Colors
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="heading-2">
+			
+			BG
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			
+			<table width="100%">
+				<tr>
+					<td style="direction: ltr; background:#387f7c; color:#fff; font-size:12px; text-align:center; height: 40px">$color-bg-1<br>#387f7c</td>
+					<td style="direction: ltr; background:#9ed3d2; color:#fff; font-size:12px; text-align:center; height: 40px">$color-bg-2<br>#9ed3d2</td>
+					<td style="direction: ltr; background:#efda5e; color:#fff; font-size:12px; text-align:center; height: 40px">$color-bg-3<br>#efda5e</td>
+					<td style="direction: ltr; background:#5e5f5f; color:#fff; font-size:12px; text-align:center; height: 40px">$color-bg-4<br>#5e5f5f</td>
+					<td style="direction: ltr; background:#edf3f3; color:#444; font-size:12px; text-align:center; height: 40px">$color-bg-5<br>#edf3f3</td>
+				</tr>
+			</table>
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="heading-2">
+			
+			Texts
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			
+			<table width="100%">
+				<tr>
+					<td style="direction: ltr; background:#387f7c; color:#fff; font-size:12px; text-align:center; height: 40px">$color-text-1<br>#387f7c</td>
+					<td style="direction: ltr; background:#009490; color:#fff; font-size:12px; text-align:center; height: 40px">$color-text-2<br>#009490</td>					
+					<td style="direction: ltr; background:#444; color:#fff; font-size:12px; text-align:center; height: 40px">$color-text-3<br>#444</td>
+					<td style="direction: ltr; background:#5e5f5f; color:#fff; font-size:12px; text-align:center; height: 40px">$color-text-4<br>#5e5f5f</td>					
+					<td style="direction: ltr; background:#999; color:#fff; font-size:12px; text-align:center; height: 40px">$color-text-5<br>#999</td>
+					<td style="direction: ltr; background:#b3b3b3; color:#fff; font-size:12px; text-align:center; height: 40px">$color-text-6<br>#b3b3b3</td>
+					
+					
+					
+				</tr>
+			</table>
+			
+		</td>
+	</tr>
+
+	<tr>
+		<td class="heading">
+			
+			Paddings
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td>p1 - 10px</td>
+	</tr>
+	
+	<tr>
+		<td>p2 - 24px</td>
+	</tr>
+	
+	<tr>
+		<td>p3 - 32px</td>
+	</tr>
+	
+	<tr>
+		<td>p4 - 40px</td>
+	</tr>
+	
+	<tr>
+		<td>p5 - 50px</td>
+	</tr>
+	
+	<tr>
+		<td>p5 - 60px</td>
+	</tr>
+	
+	
+	<tr>
+		<td class="heading">
+			
+			Typography
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="h1">Titular h1 20px</td>
+	</tr>
+	<tr>
+		<td class="h2">Titular h2 24px</td>
+	</tr>
+	<tr>
+		<td class="h3">Titular h3 20px</td>
+	</tr>
+	<tr>
+		<td class="h4">Titular h4 16px</td>
+	</tr>
+	<tr>
+		<td class="h5">Titular h5 12px</td>
+	</tr>
+	<tr>
+		<td class="h6">Titular h6 10px</td>
+	</tr>
+	
+	<tr>
+		<td class="paragraph">
+			Lorem ipsum <strong class="strong">dolor</strong> sit amet, consectetur adipiscing elit. <sup class="sup">3</sup>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="small">Small text</td>
+	</tr>
+	
+	<tr>
+		<td class="heading">
+			
+			Buttons
+			
+		</td>
+	</tr>
+	
+	<tr>
+		
+		<td>
+			
+			<table>
+				
+				<tr>
+					<td>
+					    @@include("../../_components/_common/_atoms/_btn/_btn.html", {
+					        "bgcolor-button":"#efda5e",
+					        "bordercolor-button":"#efda5e",
+					        "borderadius-button": "0",
+					        "color-text":"#5e5f5f",
+					        "width-button":"141px",
+					        "textButton":"Button",
+					        "link": "#",
+					        "link_arrow": "../../_img-common/button-arrow.png",
+					        "arrow":false
+					    })
+					</td>
+					<td>
+					    @@include("../../_components/_common/_atoms/_btn/_btn.html", {
+					        "bgcolor-button":"#fff",
+					        "bordercolor-button":"#fff",
+					        "borderadius-button": "0",
+					        "color-text":"#387f7c",
+					        "width-button":"141px",
+					        "textButton":"Button &nbsp; ",
+					        "link": "#",
+					        "link_arrow": "../../_img-common/button-arrow-il.png",
+					        "arrow":true
+					    })
+					</td>
+				</tr>
+				
+			</table>
+			
+			
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td class="heading">
+			
+			Links
+			
+		</td>
+	</tr>
+	
+	<tr>
+		
+		<td>
+			<a class="link-1" href="#"><strong>Link 1</strong></a>
+		</td>
+	</tr>
+	
+	
+	
+	@@include("../../_components/_common/_layout/_container-end.html")	
+	
+
+@@include("../../_components/_common/_layout/_html-end.html")

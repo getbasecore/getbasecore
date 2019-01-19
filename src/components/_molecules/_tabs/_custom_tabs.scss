@@ -1,0 +1,66 @@
+$nav-tabs-border: 1px solid $color-border-1;
+$nav-tabs-padding: 14px;
+$nav-tabs-bg: white;
+$nav-tabs-color: $color-text-2;
+$nav-tabs-bg-hover: $color-bg-3;
+$nav-tabs-color-hover: white;
+$nav-tabs-bg-active: $color-bg-2;
+$nav-tabs-color-active: white;
+
+
+$nav-tabs-content-mb: $margin1;
+$nav-tabs-content-padding: 40px;
+$nav-tabs-content-bg: white;
+$nav-tabs-content-border: 1px solid $color-border-1;
+
+
+
+.nav--tabs {
+  
+  border-bottom: $nav-tabs-border;
+  
+  > li{
+    > [role="tab"]{
+      border: $nav-tabs-border;
+      background: $nav-tabs-bg;
+      color: $nav-tabs-color;
+      padding: $nav-tabs-padding;
+      transition: .5s;
+      &:hover{
+        background: $nav-tabs-bg-hover;
+        color: $nav-tabs-color-hover;      
+      }
+    }
+    
+    &.is-active{
+      
+      > [role="tab"]{
+        background: $nav-tabs-bg-active;
+        color: $nav-tabs-color-active;
+        &:hover{
+          
+          
+        }
+      }
+       
+    }
+  }
+  
+}
+
+.tab-content { 
+  margin-bottom: $nav-tabs-content-mb;
+  
+  
+  
+  &__panel{
+    margin-bottom: $nav-tabs-content-mb;
+    padding: $nav-tabs-content-padding;
+    background: $nav-tabs-content-bg;
+    border: $nav-tabs-content-border;
+    border-top:0;
+    
+  }
+  
+}
+

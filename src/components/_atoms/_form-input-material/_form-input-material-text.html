@@ -1,0 +1,19 @@
+<div class="form__group @@validation">        
+  <textarea placeholder="placeholder" type="@@type" class="form__control" required  id="input-text" @@if(context.value){ value="@@value" }></textarea>        
+  <label class="form--material__label" for="input-text">@@label</label>
+  <div class="form__line"></div>
+  @@if(context.validation){
+    <span class="form__icon" aria-hidden="true">
+      <svg class="icon" role="presentation">
+          <use xlink:href="../dist/svg/symbol/svg/sprite.symbol.svg#form-warning"></use>
+      </svg>      
+    </span>
+  }  
+  @@if(context.help){
+  <div class="form__group__help">
+    <ul>
+      <li>@@help</li>
+    </ul>
+  </div>  
+  }
+</div>  

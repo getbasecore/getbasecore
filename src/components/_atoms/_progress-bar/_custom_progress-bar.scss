@@ -1,0 +1,23 @@
+$progress-height: 20px;
+$progress-mb: $margin1;
+$progress-bg: $color-bg-2;
+$progress-color: white;
+$progress-font-size: 12px;
+$progress-transition: width .6s ease;
+
+
+// @mixin generate-progress($name, $progress-color, $progress-bg, $progress-value-bg)
+@include generate-progress(success,white,$progress-bg,$color-success);
+
+.progress{
+  height: $progress-height;
+  margin-bottom: $progress-mb;
+  transition: $progress-transition;
+    
+  //legacy progress value  
+  span{
+    font-size: $progress-font-size;
+    line-height: $progress-height;
+  }
+  
+}

@@ -1,0 +1,70 @@
+$pagination-border: 1px solid $color-border-1;
+$pagination-mb: $margin1;
+$pagination-padding: 5px;
+$pagination-width: 30px;
+$pagination-height: 30px;
+$pagination-font-size: 12px;
+$pagination-line-height: 18px;
+$pagination-bg: white;
+$pagination-color: $color-text-1;
+$pagination-bg-hover: $color-bg-2;
+$pagination-color-hover: white;
+
+$pagination-bg-active: $color-bg-3;
+$pagination-color-active: white;
+
+$pagination-icon-color: $color-text-2;
+$pagination-icon-size: 20px;
+
+
+.pagination{
+
+  margin-bottom: $pagination-mb;
+    
+  .icon{
+    fill: $pagination-icon-color;
+    
+    width: $pagination-icon-size;
+    height: $pagination-icon-size;
+    vertical-align: middle;
+    
+  }
+
+  a{
+    padding: $pagination-padding;
+    width: $pagination-width;
+    height: $pagination-height;
+    border: $pagination-border;
+    border-right: 0;
+    color: inherit;
+    font-size: $pagination-font-size;
+    background: $pagination-bg;
+    line-height: $pagination-line-height; 
+    
+    &:hover{
+      
+      background: $pagination-bg-hover;
+      color: $pagination-color-hover;
+      transition: .2s;
+      
+      
+    }
+    
+  }
+  
+  li:last-child{
+    a{
+      border-right: $pagination-border;
+    }  
+  }
+  
+  .is-active a{
+    
+    background: $pagination-bg-active;
+    color: $pagination-color-active;
+    
+  }
+  
+  
+  
+}

@@ -1,0 +1,43 @@
+
+//  --------------------------------------------------
+//  Tamaños
+// --------------------------------------------------
+
+// Comentado por incompatibilidad con IE11 y ya no ser necesario
+// Permitimos colorear los iconos
+// .icon use>svg path para solventar Firefox BUG
+//svg path,
+//.icon use>svg path  {
+//  fill: currentColor;
+//}
+
+svg.icon.icon.icon {
+  
+  &--xs{
+    width: $icon-xs;
+    height: $icon-xs;
+  }
+  
+  &--sm{
+    width: $icon-sm;
+    height: $icon-sm;
+  }
+  
+  &--md{
+    width: $icon-md;
+    height: $icon-md;
+  }
+  
+  &--lg{
+    width: $icon-lg;
+    height: $icon-lg;
+  }  
+  
+  &--xl{
+    width: $icon-xl;
+    height: $icon-xl;
+  }
+  
+  
+  
+}

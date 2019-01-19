@@ -1,0 +1,47 @@
+$btn-switch-width: 60px;
+$btn-switch-height: 24px;
+$btn-switch-knob-width: 21px;
+$btn-switch-knob-top: 0px;
+$btn-switch-knob-bg: white;
+$btn-switch-knob-border-active: 1px solid $color-border-1;
+$btn-switch-border: 1px solid $color-success;
+$btn-switch-transition-in: background-color 0.3s ease-in;
+$btn-switch-transition-out: all 0.3s ease-in 0s;
+$btn-switch-bg-active: $color-success;
+$btn-switch-bg-inactive: white;
+$btn-switch-bg-inactive-border: 1px solid $color-border-1;
+
+.btn-switch {
+    width: $btn-switch-width;
+  &__label {
+      height: $btn-switch-height;
+      line-height: $btn-switch-height;
+      border: $btn-switch-bg-inactive-border !important;
+      border-radius: $btn-switch-height;
+      background-color: $btn-switch-bg-inactive;
+      transition: $btn-switch-transition-in;
+  }
+  &__label:before {
+      width: $btn-switch-knob-width;
+      height: $btn-switch-knob-width; 
+      top: $btn-switch-knob-top;
+      background: $btn-switch-knob-bg;
+      right: $btn-switch-width - $btn-switch-height + $btn-switch-knob-top;
+      border: $btn-switch-knob-border-active;
+      border-radius: $btn-switch-height;
+      transition: $btn-switch-transition-out; 
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 1px 0 rgba(0, 0, 0, 0.05);
+  }
+    &__checkbox:checked + &__label:before {
+      right: $btn-switch-knob-top; 
+  }
+
+  &__checkbox:checked + &__label {
+      background-color: $btn-switch-bg-active;
+  }
+  &__checkbox:checked + &__label, &__checkbox:checked + &__label:before {
+     border-color: $btn-switch-bg-active;
+     border: $btn-switch-border !important;
+  }
+    
+}

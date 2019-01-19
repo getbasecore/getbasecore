@@ -1,0 +1,32 @@
+@mixin generate-btn-simple($name, $color, $bg, $color-hover, $bg-hover, $bg-active, $color-disabled, $bg-disabled){
+  
+  .btn-simple--#{$name}{
+    color: $color;
+    background: $bg;
+    
+    &:hover,
+    &:focus{
+      color: $color-hover;
+      background: $bg-hover
+    }
+    
+    &[disabled],
+    &.is-disabled{
+      color: $color-disabled;
+      background: $bg-disabled;
+    }
+    //When used as a fake radio / checkbox
+
+    @at-root .btn-group input + label#{&}{
+      background: $bg;
+    }
+    
+    
+    @at-root .btn-group input:checked + label#{&}{
+      background: $bg-active;
+    }
+    
+  }
+  
+  
+}

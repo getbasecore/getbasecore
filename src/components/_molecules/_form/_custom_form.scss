@@ -1,0 +1,155 @@
+$form-fieldset-mb: $margin3;
+$form-group-mb: $margin2;
+$form-hr-mb: $margin3; 
+$form-leyend-extend: ".h3";
+
+
+$form-slider-track-height: 20px;
+$form-slider-track-bg: $color-border-1;
+$form-slider-track-bg-hover: $color-border-1;
+$form-slider-track-border: 0;
+$form-slider-track-border-radius: 0;
+$form-slider-track-transition: all .2s ease;
+$form-slider-thumb-size: 30px;
+$form-slider-thumb-border-size: 0;
+$form-slider-thumb-bg: $color-border-1;
+$form-slider-thumb-border-color: $color-border-1;
+$form-slider-thumb-border-radius: 100%;
+$form-slider-thumb-shadow: $color-border-1;
+
+.form{
+
+  fieldset{
+    margin-bottom: $form-fieldset-mb;
+  }
+  
+  legend{
+    @extend $form-leyend-extend !optional;
+  }
+
+  hr{
+    margin-top: 0;
+    margin-bottom: $form-hr-mb;
+  }
+
+  &__group{
+    
+    margin-bottom: $form-group-mb;
+        
+  }    
+
+
+  [type=range] {
+    padding: 0;
+  
+    &::-webkit-slider-runnable-track {      
+    @include generate-track();     
+    }
+  
+    &::-webkit-slider-thumb {      
+    @include generate-thumb();
+    }
+  
+    &:focus::-webkit-slider-runnable-track {
+      background: $form-slider-track-bg-hover;
+    }
+  
+    &::-moz-range-track {
+    @include generate-track();
+    }
+   
+    &::-moz-range-thumb {
+      @include generate-thumb();
+    }
+   
+    &::-ms-track {
+      @include generate-track();
+    }
+   //
+   // &::-ms-fill-lower {
+   //   background: darken($track-color, $contrast);
+   //   border: $track-border-width solid $track-border-color;
+   //   border-radius: $track-radius * 2;
+   // }
+   //
+   // &::-ms-fill-upper {
+   //   background: $track-color;
+   //   border: $track-border-width solid $track-border-color;
+   //   border-radius: $track-radius * 2;
+   // }
+   //
+    &::-ms-thumb {
+      @include generate-thumb();
+    }
+   //
+   // &:focus::-ms-fill-lower {
+   //   background: $track-color;
+   // }
+   //
+   // &:focus::-ms-fill-upper {
+   //   background: lighten($track-color, $contrast);
+   // }
+  }  
+  
+  //Formulario inline
+  
+  &--inline{
+    
+    label{
+      //display: inline-block;
+      margin-bottom: $margin1;
+    }
+    
+    
+    // .form__group{
+    //   
+    //   //Les damos estilo en XS
+    //   @media (max-width: $screen-xs) {
+    //     
+    //     //margen para separarlos en XS
+    //     .form__group{
+    //       margin-bottom: $margin2; 
+    //     }
+    //   }
+    //   
+    //   label{
+    //     @media (max-width: $screen-xs) {
+    //       margin-bottom: $margin1;
+    //     }
+    //   }
+    //   
+    // }
+    
+    
+  }
+  
+  
+  // -------------------------------------------------- 
+  //  Tamaños
+  // --------------------------------------------------
+  
+  
+  &--xs{
+    input,
+    select{
+      font-size: 10px;
+    }
+  }
+  
+  &--sm{
+    input,
+    select{
+
+    }
+  }
+  
+  &--lg{
+    input,
+    select{
+      font-size: 24px;
+    }
+  }
+  
+  
+  
+}

@@ -1,0 +1,168 @@
+.webkit {
+  max-width: $nl-width;
+  box-sizing: border-box;
+}
+
+.border-box .outside{
+	padding-left: $gutter;
+	padding-right: $gutter;
+	padding-bottom: $gutter;
+	background: $border-box;
+}
+
+.border-box .inner{
+	padding: $gutter 0 $gutter 0;
+	//padding-right: $gutter;
+	//box-sizing: border-box;
+}
+
+.inner {
+
+	font-size: 0px;
+
+	div{
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+
+.col-full-td{
+	padding-left:0;
+	padding-right:0
+}	
+
+.col-first-td{
+	padding-left:$gutter;
+	.rtl &{
+		padding-left: 0;
+		padding-right: $gutter;
+	}
+}
+
+.col-td{
+	padding-left:$gutter;
+	.rtl &{
+		padding-left: 0;
+		padding-right: $gutter;
+	}
+	
+}
+
+.col-last-td{
+	padding-left:$gutter;
+	padding-right:$gutter;
+	.rtl &{
+		padding-left: $gutter;
+		padding-right: $gutter;
+	}
+	
+}
+
+.col-one-td{
+	padding-left:$gutter;
+	padding-right:$gutter;	
+}
+
+
+.outer{
+	width: 100%;
+	max-width: $nl-width;	
+}
+
+.col-144{
+	
+		width:100%;
+		max-width:$nl-width/4.16666666666667;
+}
+
+.col-168{
+		width: 100%;
+		max-width:$nl-width/3.57142857142857;
+}
+
+.col-288{
+		width: 100%;
+		max-width: $nl-width/2.08333333333333;			
+}
+	
+.col-312{
+		width: 100%;
+		max-width: $nl-width/1.92307692307692;			
+}
+	
+.col-432{
+		width:100%;
+		max-width:$nl-width/1.38888888888889;			
+}
+	
+.col-456{
+		width:100%;
+		max-width:$nl-width/1.31578947368421;			
+}
+
+.col-600{
+		width:100%;
+		max-width:$nl-width;
+}
+
+
+.border-box{
+	.col-first-td{
+//		padding-left:0;
+//		padding-right:0
+	}
+//	
+	.col-last-td{
+//		padding-right:0
+	}
+//	
+	.col-one-td{
+//		padding-left:0;
+//		padding-right:0
+	}	
+}
+
+
+.border-box{
+	
+	
+	.col-144{
+		
+			width:100%;
+			max-width:$nl-width/4.16666666666667 - $gutter / 2;
+	}
+	
+	.col-168{
+			width: 100%;
+			max-width:$nl-width/3.57142857142857 - $gutter / 2;
+	}
+	
+	.col-288{
+			width: 100%;
+			max-width: $nl-width/2.08333333333333  - $gutter;	
+	}
+		
+	.col-312{
+			width: 100%;
+			max-width: $nl-width/1.92307692307692 - $gutter;				
+	}
+		
+	.col-432{
+			width:100%;
+			max-width:$nl-width/1.38888888888889 - $gutter - $gutter / 2;						
+	}
+		
+	.col-456{
+			width:100%;
+			max-width:$nl-width/1.31578947368421 - $gutter - $gutter / 2;			
+	}
+	
+	.col-600{
+			width:100%;
+			max-width:$nl-width;
+	}
+	
+
+
+}

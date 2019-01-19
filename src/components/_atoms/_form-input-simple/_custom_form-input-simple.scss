@@ -1,0 +1,155 @@
+$form-control-border: 1px solid $color-border-1;
+$form-label-mb: $margin1;
+$form-control-border-radius:0;
+$form-control-padding: 4px 10px;
+$form-control-box-shadow: none;
+$form-control-bg: white;
+$form-control-border-hover: 1px solid $color-border-1;
+$form-control-bg-hover: white;
+
+$form-help-padding: 12px 0;
+$form-help-text-size: 12px;
+
+$form-icon-size: 32px;
+$form-icon-right: 10px;
+$form-icon-top: 25px;
+
+$form-select-caret-size: 8px;
+$form-select-caret-position: right 12px center; 
+
+.form--simple{
+  label{
+    margin-bottom: $form-label-mb;
+  }
+
+  .form__group{
+    
+    .form__help{
+      float: right;
+      font-size: $form-help-text-size;
+      padding: $form-help-padding;  
+    }
+    
+    > .form__addon{
+      @extend .btn-simple;
+      @extend .btn-simple--1;      
+      border-radius: $form-control-border-radius;      
+    }    
+    
+    .form__help{
+      float: right;
+      font-size: $form-help-text-size;
+      padding: $form-help-padding;  
+    }
+    
+    &--success,
+    &--info,
+    &--warning,
+    &--danger
+    {
+    }
+    
+    //Validaciones
+    &--success{
+      label,
+      input,
+      select,
+      textarea{
+        color: $color-success;
+        border-color: $color-success 
+      }
+      .form__group__help{
+        color: $color-success;
+      }  
+      svg{
+        fill: $color-success
+      }          
+      
+    }
+    &--info{
+      label,
+      input,
+      select,
+      textarea{
+        background: $color-info ;
+        border-color: $color-info;
+      }
+      .form__group__help{
+        color: $color-info ;
+      }  
+      svg{
+        fill: $color-info
+      }          
+    }
+    &--warning{
+      label,
+      input,
+      select,
+      textarea{
+        color: $color-warning;
+        border-color: $color-warning;
+      }
+      .form__group__help{
+        color: $color-warning ;
+      }  
+      svg{
+        fill: $color-warning
+      }          
+    }
+    &--danger{
+      label,
+      input,
+      select,
+      textarea{
+        color: $color-danger ;
+        border-color: $color-danger 
+      }
+      .form__group__help{
+        color: $color-danger ;
+      }            
+      svg{
+        fill: $color-danger
+      }                
+    }
+    //icono validación
+    .form__icon {
+      top: $form-icon-top;      
+      svg{
+        width: $form-icon-size;
+        height: $form-icon-size;
+
+        right: $form-icon-right;
+        }
+    }
+    
+  }
+
+  .form__control,
+  select,
+  textarea{
+    border: $form-control-border;
+    border-radius: $form-control-border-radius;
+    box-shadow: $form-control-box-shadow;
+    padding: $form-control-padding;
+    background: $form-control-bg;
+    &:focus{
+      background-color: $form-control-bg-hover;  
+      border: $form-control-border-hover;
+    }
+  }
+  
+  select{
+    padding-right: 20px;  
+    background: url($caret) no-repeat;
+    background-size: 100% 100%;
+    background-color: $form-control-bg;
+    background-size: $form-select-caret-size $form-select-caret-size;
+    background-position: $form-select-caret-position;  
+    -moz-appearance: none;
+    &:focus{      
+      background: $form-control-bg-hover;  
+      border: $form-control-border-hover;
+    }
+    
+  }
+}

@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+# baseCore
+Modular, easy to upgrade and high performance HTML framework
 
-You can use the [editor on GitHub](https://github.com/getbasecore/getbasecore/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Requisitos:
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Apache:
 
-```markdown
-Syntax highlighted code block
+**OSX**: https://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working-on-macos-sierra/
 
-# Header 1
-## Header 2
-### Header 3
+** Recordar cambiar etc/apache2/httpd.conf para que la linea de DocumentRoot y Directory se correspondan a la carpeta Sites de tu usuario: **
 
-- Bulleted
-- List
+DocumentRoot "/Users/USUARIO/Sites"
 
-1. Numbered
-2. List
+<Directory "/Users/USUARIO/Sites">
 
-**Bold** and _Italic_ and `Code` text
+De esta manera http://localhost mostrará el contenido de /Users/USUARIO/Sites
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Node
+https://nodejs.org/es/download/
 
-### Jekyll Themes
+### Gulp
+https://gulpjs.com
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/getbasecore/getbasecore/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Configurando
+- Ejecutar npm install
 
-### Support or Contact
+## Creación de nuevos proyectos
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Para evitar tener varias carpetas node_modules por proyectos usaremos un simlink al repositorio local de baseCore.
+
+
+- Renombramos el symlink node\_modules-sim a node_modules
+
+- Editamos el archivo config.json ya en la carpeta del proyecto para configurar las rutas correctas en caso de que trabajemos con algún CMS y no sean las mismas.
+- Editar la variable "app" indicando la carpeta concreta dentro de Sites donde está el proyecto para que Browsersync pueda hacer de proxy. Ej: /Users/USUARIO/Sites/web = http://localhost/web
+
+## Ejecutando el proyecto
+
+- Ejecutar gulp para lanzar el proyecto en localhost:3000 y listo.

@@ -1,0 +1,28 @@
+.pagination{
+  > ul{
+    display: flex;
+  }
+  
+  a{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: inherit;
+    
+    &:hover{
+      
+      
+      
+    }
+    
+  }
+  
+  .is-active a{
+    
+    
+  }
+  
+  
+  
+}
